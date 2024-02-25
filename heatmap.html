@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .all-heatmap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.3em;
+            cursor: pointer;
+        }
+
+        .first-row,
+        .second-row,
+        .third-row,
+        .fourth-row,
+        .fifth-row {
+            display: flex;
+            flex-direction: row;
+            gap: 0.7em;
+        }
+
+        .first-row-map-elements1 {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: initial;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+
+        }
+
+        .first-row-map-elements2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(253, 126, 20);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .first-row-map-elements3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .first-row-map-elements4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .first-row-map-elements5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .second-row-map-elements1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .second-row-map-elements2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .second-row-map-elements3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(253, 126, 20);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .second-row-map-elements4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .second-row-map-elements5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .third-row-map-elements1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .third-row-map-elements2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .third-row-map-elements3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .third-row-map-elements4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(253, 126, 20);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .third-row-map-elements5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 82, 82);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fourth-row-map-elements1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fourth-row-map-elements2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fourth-row-map-elements3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fourth-row-map-elements4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fourth-row-map-elements5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(253, 126, 20);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fifth-row-map-elements1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fifth-row-map-elements2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fifth-row-map-elements3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fifth-row-map-elements4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(130, 201, 30);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+        .fifth-row-map-elements5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgb(250, 176, 5);
+            border-radius: 10%;
+            color: aliceblue;
+        }
+
+
+        .main-heatmap {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: flex-start; */
+            align-items: center;
+            gap: 1rem;
+
+        }
+
+        .heatmap-range {
+            display: flex;
+            flex-direction: row;
+            gap: 3em;
+        }
+
+        .outHeat {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .heatmap-title-range {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .point-sec {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .first-point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5em;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .second-point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5em;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            background-color: gray;
+            color: aliceblue;
+        }
+
+        .third-point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5em;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            border: 1px solid black;
+            background-color: aliceblue;
+            color: black;
+        }
+
+        .pname {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+            margin-bottom: 50px;
+        }
+
+        .legend-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .low-meter {
+            width: 150px;
+            height: 15px;
+            border-radius: 10px;
+            background-color: rgb(130, 201, 30);
+        }
+
+        .moderate-meter {
+            width: 150px;
+            height: 15px;
+            border-radius: 10px;
+            background-color: rgb(250, 176, 5);
+        }
+
+        .high-meter {
+            width: 150px;
+            height: 15px;
+            border-radius: 10px;
+            background-color: rgb(253, 126, 20);
+        }
+
+        .extreme-meter {
+            width: 150px;
+            height: 15px;
+            border-radius: 10px;
+            background-color: rgb(250, 82, 82);
+        }
+
+        .hidden-points {
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .elem-value {
+            position: absolute;
+            font-weight: 600;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-body">
+
+        <div class="legend">
+            <div class="legend-name">
+                <p>LOW</p>
+                <span class="low-meter"></span>
+
+            </div>
+            <div class="legend-name">
+                <p>MODERATE</p>
+                <span class="moderate-meter"></span>
+            </div>
+            <div class="legend-name">
+                <p>HIGH</p>
+                <span class="high-meter"></span>
+            </div>
+            <div class="legend-name">
+                <p>EXTREME</p>
+                <span class="extreme-meter"></span>
+            </div>
+        </div>
+
+        <div class="point-sec" id="point-sec">
+            <span class="pname">
+                <span class="first-point points" draggable="true" id="draggable-point" ondragstart="pointClick(event)">G</span>
+                <span class="first-point hidden-points" draggable="true">G</span>
+                <span>Gross</span>
+            </span>
+
+
+            <span class="pname">
+                <span class="second-point points" draggable="true" ondragstart="pointClick(event)">N</span>
+                <span class="second-point hidden-points" draggable="true">N</span>
+                <span>Net</span>
+            </span>
+
+            <span class="pname">
+                <span class="third-point points" draggable="true" ondragstart="pointClick(event)">T</span>
+                <span class="third-point hidden-points" draggable="true">T</span>
+                <span>Target</span>
+            </span>
+
+        </div>
+        <div class="outHeat">
+
+            <div class="heatmap-title-range">
+                <span>Very High</span>
+                <span>High</span>
+                <span>Medium</span>
+                <span>Low</span>
+                <span>Very Low</span>
+            </div>
+            <div class="main-heatmap">
+                <div class="heatmap-title"></div>
+                <h1>Heat Map</h1>
+                <div class="all-heatmap" id="all-heatmap">
+                    <div class="first-row">
+                        <div class="first-row-map-elements1" id="heatmap1" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">5</p>
+                        </div>
+                        <div class="first-row-map-elements2" id="heatmap2" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">10</p>
+                        </div>
+                        <div class="first-row-map-elements3" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">15</p>
+                        </div>
+                        <div class="first-row-map-elements4" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">20</p>
+                        </div>
+                        <div class="first-row-map-elements5" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">25</p>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="second-row-map-elements1" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">4</p>
+                        </div>
+                        <div class="second-row-map-elements2" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">8</p>
+                        </div>
+                        <div class="second-row-map-elements3" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">12</p>
+                        </div>
+                        <div class="second-row-map-elements4" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">16</p>
+                        </div>
+                        <div class="second-row-map-elements5" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">20</p>
+                        </div>
+                    </div>
+                    <div class="third-row">
+                        <div class="third-row-map-elements1" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">3</p>
+                        </div>
+                        <div class="third-row-map-elements2" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">6</p>
+                        </div>
+                        <div class="third-row-map-elements3" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">9</p>
+                        </div>
+                        <div class="third-row-map-elements4" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">12</p>
+                        </div>
+                        <div class="third-row-map-elements5" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">15</p>
+                        </div>
+                    </div>
+                    <div class="fourth-row">
+                        <div class="fourth-row-map-elements1" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">2</p>
+                        </div>
+                        <div class="fourth-row-map-elements2" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">4</p>
+                        </div>
+                        <div class="fourth-row-map-elements3" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">6</p>
+                        </div>
+                        <div class="fourth-row-map-elements4" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">8</p>
+                        </div>
+                        <div class="fourth-row-map-elements5" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">10</p>
+                        </div>
+                    </div>
+                    <div class="fifth-row">
+                        <div class="fifth-row-map-elements1" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">1</p>
+                        </div>
+                        <div class="fifth-row-map-elements2" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">2</p>
+                        </div>
+                        <div class="fifth-row-map-elements3" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">3</p>
+                        </div>
+                        <div class="fifth-row-map-elements4" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">4</p>
+                        </div>
+                        <div class="fifth-row-map-elements5" onclick="setValue(event)" ondragover="dragoverFunc(event)" ondrop="onDropFunc(event)">
+                            <p class="elem-value">5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="heatmap-range">
+                    <span>Very High</span>
+                    <span>High</span>
+                    <span>Medium</span>
+                    <span>Low</span>
+                    <span>Very Low</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    let x = document.getElementById("P97_NEW");
+
+    function setValue(event) {
+        x.value = event.target.innerHTML;
+    }
+
+    let selected;
+    // let hpoints;
+    function pointClick(event){
+      
+        selected = event.target;
+        // hpoints=event.target
+        
+
+    }
+    // console.log(hpoints)
+
+
+    function dragoverFunc(event){
+        // console.log(event)
+        event.preventDefault();
+    }
+
+    function onDropFunc(event){
+        // hpoints.style.display = 'flex'
+        selected.style.scale = 0.5
+        // selected.style.opacity = 0.5
+        event.target.appendChild(selected);
+        selected = null;
+    }
+    // let lists = document.getElementsByClassName('points')
+
+    // let hPoints = document.getElementsByClassName('hidden-points')
+
+
+    // // let allheatmap=document.getElementById("all-heatmap")
+    // let allheatmap = document.getElementById("heatmap1")
+    // // let allheatmap2 = document.getElementById("heatmap2")
+
+
+    // let firstrow = document.getElementsByClassName('first-row')
+
+    // let allpoints = document.getElementById("point-sec")
+
+
+
+    // for (let i = 0; i < lists.length; i++) {
+      
+
+    //     if (i == 0) {
+    //         lists[i].addEventListener('dragstart', function (e) {
+    //             // console.log(e)
+    //             let selected = e.target;
+             
+    //             allheatmap.addEventListener('dragover', function (e) {
+    //                 e.preventDefault();
+
+
+    //             })
+             
+
+
+
+    //             allheatmap.addEventListener('drop', function (e) {
+    //                 hPoints[0].style.display = 'flex'
+    //                 selected.style.scale = 0.5
+    //                 selected.style.opacity = 0.5
+
+
+    //                 allheatmap.appendChild(selected);
+    //                 selected = null;
+    //             })
+           
+    //         })
+    //     }
+    //     else if (i == 1) {
+    //         lists[i].addEventListener('dragstart', function (e) {
+    //             let selected = e.target;
+    //             // console.log(e)
+
+    //             allheatmap.addEventListener('dragover', function (e) {
+    //                 e.preventDefault();
+
+    //             })
+
+
+
+    //             allheatmap.addEventListener('drop', function (e) {
+    //                 hPoints[1].style.display = 'flex'
+    //                 selected.style.scale = 0.5
+    //                 selected.style.opacity = 0.5
+    //                 allheatmap.appendChild(selected);
+    //                 selected = null;
+    //             })
+    //         })
+    //     }
+
+    //     else if (i == 2) {
+    //         lists[i].addEventListener('dragstart', function (e) {
+    //             // console.log(e)
+    //             let selected = e.target;
+
+    //             allheatmap.addEventListener('dragover', function (e) {
+    //                 e.preventDefault();
+
+    //             })
+
+
+
+    //             allheatmap.addEventListener('drop', function (e) {
+    //                 hPoints[2].style.display = 'flex'
+    //                 selected.style.scale = 0.5
+    //                 selected.style.opacity = 0.5
+    //                 allheatmap.append(selected);
+    //                 selected = null;
+    //             })
+    //         })
+    //     }
+
+    // }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
